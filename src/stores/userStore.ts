@@ -8,6 +8,9 @@ export const useUserStore = defineStore("userStore", {
       dob: { date: string; age: number };
       picture: { large: string };
       login: { uuid: string };
+      gender: { gender: string };
+      location: { country: string; state: string; city: string };
+      email: { email: string };
     }[],
     loading: false,
   }),

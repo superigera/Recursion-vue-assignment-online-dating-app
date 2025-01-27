@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>User List</h1>
+    <HomeButton />
 
     <p v-if="loading">Loading...</p>
 
@@ -23,6 +23,7 @@ import { onMounted } from 'vue';
 import { useUserStore } from '@/stores/userStore';
 import { storeToRefs } from 'pinia';
 import UserItem from '@/components/UserItem.vue';
+import HomeButton from '@/components/button/HomeButton.vue';
 
 const userStore = useUserStore();
 const { users, loading } = storeToRefs(userStore);

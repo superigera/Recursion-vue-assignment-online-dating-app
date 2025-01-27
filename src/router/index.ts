@@ -6,6 +6,10 @@ const routes = [
     path: "/",
     component: () => import("@/pages/user-list.vue"),
   },
+  {
+    path: "/user/:id",
+    component: () => import("@/pages/user-detail.vue"),
+  },
 ];
 
 // Vue Router のインスタンスを作成

@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card :to="`/user/${user.login.uuid}`" class="hoverable clickable">
     <v-img :src="user.picture.large" height="200px" alt="User Picture"></v-img>
     <v-card-title>{{ user.name.first }} {{ user.name.last }}</v-card-title>
     <v-card-text>age: {{ user.dob.age }}</v-card-text>
