@@ -1,17 +1,10 @@
 import { defineStore } from "pinia";
+import type { User } from "@/types/User.ts";
 import axios from "axios";
 
 export const useUserStore = defineStore("userStore", {
   state: () => ({
-    users: [] as {
-      name: { first: string; last: string };
-      dob: { date: string; age: number };
-      picture: { large: string };
-      login: { uuid: string };
-      gender: { gender: string };
-      location: { country: string; state: string; city: string };
-      email: { email: string };
-    }[],
+    users: [] as User[],
     loading: false,
   }),
 
