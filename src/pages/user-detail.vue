@@ -5,8 +5,8 @@
             <v-card v-if="user" class="ma-auto" style="max-width: 650px;">
                 <v-img :src="user.picture.large" height="300px" alt="User Picture"></v-img>
                 <div class="d-flex justify-center ma-2">
-                    
-                    <v-btn color="blue-accent-1">
+
+                    <v-btn color="blue-accent-1" :to="`/user/${user.login.uuid}/chat`">
                         <v-icon left>mdi-email</v-icon>
                         MESSAGE
                     </v-btn>

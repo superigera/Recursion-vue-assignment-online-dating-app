@@ -10,6 +10,10 @@ const routes = [
     path: "/user/:id",
     component: () => import("@/pages/user-detail.vue"),
   },
+  {
+    path: "/user/:id/chat",
+    component: () => import("@/pages/chat.vue"),
+  },
 ];
 
 // Vue Router のインスタンスを作成
