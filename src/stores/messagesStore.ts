@@ -8,14 +8,22 @@ export const useMessagesStore = defineStore("messagesStore", {
   }),
 
   actions: {
-    // メッセージ一覧を取得する
+    /**
+     * 指定されたユーザー ID に紐づくメッセージ一覧を取得する
+     * @param {string} userId - 取得したいユーザーの ID
+     * @returns {Message[]} 指定されたユーザーのメッセージリスト
+     */
     getMessagesById(userId: string): Message[] {
-      // idが合致するメッセージを取得する
       return this.messages.filter((message) => message.id === userId);
     },
 
+    /**
+     * 新しいメッセージを追加する
+     * @param {string} userId - メッセージを送信するユーザーの ID
+     * @param {string} text - 送信するメッセージの内容
+     * @returns {void}
+     */
     setMessages(userId: string, text: string): void {
-      // 送信されたメッセージを追加する
       const date = new Date();
       this.messages.push({
         id: userId,

@@ -63,10 +63,15 @@ messages.value = messagesStore.getMessagesById(userId);
 
 const returnMessage = "hello";
 
-//メッセージが最大文字数を超えているかのバリデーションチェック
+/**
+ * メッセージが最大文字数を超えているかを判定
+ * @returns {boolean} `true` の場合は制限を超えている
+ */
 const isMessageTooLong = computed(() => newMessage.value.length > maxMessageLength);
 
-//メッセージ送信
+/**
+ * メッセージを送信する
+ */
 function sendNewMessage() {
     if (newMessage.value === "") {
         return;
@@ -79,7 +84,9 @@ function sendNewMessage() {
     scrollToBottom();
 }
 
-//一番下にスクロール
+/**
+ * メッセージエリアを一番下にスクロールする
+ */
 const scrollToBottom = () => {
     nextTick(() => {
         const container = document.querySelector(".messages-wrapper");
@@ -89,8 +96,10 @@ const scrollToBottom = () => {
     });
 };
 
+/**
+ * 初回レンダリング時にメッセージエリアを一番下にスクロールする
+ */
 onMounted(() => {
-    //読み込み時に一番下にスクロール
     scrollToBottom();
 });
 </script>
