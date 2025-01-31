@@ -9,7 +9,9 @@ export const useUserStore = defineStore("userStore", {
   }),
 
   actions: {
-    // ユーザー情報を取得する
+    /**
+     * ユーザー一覧を取得する
+     */
     fetchUsers() {
       this.loading = true;
 
