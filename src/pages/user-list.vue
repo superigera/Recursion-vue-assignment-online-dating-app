@@ -30,6 +30,8 @@ const { users, loading } = storeToRefs(userStore);
 
 // コンポーネントがマウントされたときにユーザーを取得
 onMounted(() => {
-  userStore.fetchUsers();
+  if (users.value.length === 0) {
+    userStore.fetchUsers();
+  }
 });
 </script>
